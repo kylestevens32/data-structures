@@ -51,7 +51,6 @@ var LinkedList = function() {
     // E: nah, everything null shouldn't be an edge for once
 
     // make a variable 'current' and set it equal to the head
-    debugger;
     let current = list.head;
     // while current isn't null
     while (current !== null) {

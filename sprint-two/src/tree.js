@@ -19,9 +19,6 @@ treeMethods.addChild = function(value) {
 
   // push a tree made from value into this tree's children
   this.children.push(Tree(value));
-
-
-
 };
 
 treeMethods.contains = function(target) {
