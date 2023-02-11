@@ -42,10 +42,16 @@ Graph.prototype.removeNode = function(deleteValue) {
 
 // Returns a boolean indicating whether two specified nodes are connected.  Pass in the values contained in each of the two nodes.
 Graph.prototype.hasEdge = function(fromValue, toValue) {
+  // if (fromValue === 5) {
+  //   debugger;
+  // }
 
   var fromNode = this.nodes[this.getNodeIndex(fromValue)];
   // Some sort of test of undefined-ness of fromNode and toNode
   // if tonode is in from node edges
+  if (fromNode === undefined) {
+    return false;
+  }
   for (let index in fromNode.edges) {
     if (fromNode.edges[index].value === toValue) {
       return true;
@@ -83,8 +89,6 @@ Graph.prototype.forEachNode = function(cb) {
   });
   //  (inside the fuction passed in now)
   //   call callback function on each value
-
-
 };
 
 Graph.prototype.getNodeIndex = function(nodeValue) {
@@ -107,6 +111,13 @@ var graphNode = function(value) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+addNode: O(1)
+getNodeIndex: O(n), has to go through the nodes
+contains: O(n), uses getNodeIndex
+deleteNode: O(n^2) in the case of a very edgy node. O(n) on a node whose edges are not a function of the number fo nodes
+hasEdge: O(n)
+addEdge: O(n)
+removeEdge: O(n)
  */
 
 

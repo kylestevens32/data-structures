@@ -1,6 +1,6 @@
 var Set = function() {
   var set = Object.create(setPrototype);
-  set._storage = {}; // fix me
+  set._storage = {};
   return set;
 };
 
@@ -20,4 +20,8 @@ setPrototype.remove = function(item) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+add: O(1), objects are just hashtables in a coat and moustache
+contains: O(1),
+remove: O(1),
+^^^ Assuming no crazy hash collision
  */

@@ -48,4 +48,6 @@ treeMethods.contains = function(target) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+addChild: O(1), you're just pushing to an array, we know where the end of an array is and can do it in constant
+contains: O(n) because its not sorted so we have to check every child
  */

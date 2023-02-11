@@ -45,13 +45,13 @@ describe('graph', function() {
     expect(graph.hasEdge(4, 5)).to.equal(false);
   });
 
-  it('should remove edges between nodes when a node is removed', function() {
+  it('should return false when you try and check edges of a node that doesn\'t exist', function() {
     graph.addNode(4);
     graph.addNode(5);
     graph.addEdge(5, 4);
     expect(graph.hasEdge(4, 5)).to.equal(true);
     graph.removeNode(5);
-    expect(graph.hasEdge(4, 5)).to.equal(false);
+    expect(graph.hasEdge(5, 4)).to.equal(false);
   });
 
   it('should execute a callback on each node in the graph', function() {

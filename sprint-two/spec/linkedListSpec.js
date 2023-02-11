@@ -52,4 +52,11 @@ describe('linkedList', function() {
   });
 
   // add more tests here to test the functionality of linkedList
+
+  it('should set tail to null when removeHead is called on a one node list', function () {
+    linkedList.addToTail(1);
+    linkedList.removeHead();
+    expect(linkedList.head).to.be.null;
+  });
+
 });
